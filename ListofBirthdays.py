@@ -1,5 +1,4 @@
-BirthdayDictionary = {
-[
+BirthdayDictionary = [
     [
         "Lily",
         "Constance Levesque",
@@ -102,7 +101,4 @@ BirthdayDictionary = {
     ],
 ]
 
-
-}
-    
 
