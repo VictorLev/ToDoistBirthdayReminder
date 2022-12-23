@@ -2,7 +2,7 @@ from datetime import date
 from addtask import send_task
 from ListofBirthdays import BirthdayDictionary  
 
-#Test Commit
+#test git ignore
  
 def main():
 
