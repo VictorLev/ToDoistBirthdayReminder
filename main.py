@@ -10,7 +10,8 @@ def main():
     TheDate = today.strftime('%m-%d')
     if TheDate in BirthdayDictionary[1] :
         index = BirthdayDictionary[1].index(TheDate)
-        send_task(BirthdayDictionary['name'][index])
+        send_task(BirthdayDictionary[0][index])
+        print('its '+ BirthdayDictionary[0][index]+ 'Birthday')
     
 
 if __name__ == "__main__":
