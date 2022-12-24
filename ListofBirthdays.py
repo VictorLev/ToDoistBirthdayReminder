@@ -1,5 +1,6 @@
 BirthdayDictionary = [
     [
+        'Victor',
         "Lily",
         "Constance Levesque",
         "Justine Levesque",
@@ -50,6 +51,7 @@ BirthdayDictionary = [
         "Sebastien Demontigny",
     ],
     [
+        "12-24",
         "11-25",
         "05-16",
         "09-19",

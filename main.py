@@ -11,6 +11,7 @@ def main():
     if TheDate in BirthdayDictionary[1] :
         index = BirthdayDictionary[1].index(TheDate)
         send_task(BirthdayDictionary['name'][index])
+    
 
 if __name__ == "__main__":
     main()
