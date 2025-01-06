@@ -1,14 +1,30 @@
-from datetime import timedelta,date
-from addtask import send_task
-from ListofBirthdays import BirthdayDictionary  
+import os
+import json
 
-def main():
-    today = date.today()+ timedelta(days=1)
-    TheDate = today.strftime('%m-%d')
-    for index, Birthdate in enumerate(BirthdayDictionary[1]):
-        if TheDate == Birthdate:
-            send_task(BirthdayDictionary[0][index])
-            print('its '+ BirthdayDictionary[0][index]+ ' Birthday')
-    
-if __name__ == "__main__":
-    main()
+from todoist_api_python.api import TodoistAPI
+from datetime import datetime
+
+# Initialize Todoist API
+API = os.getenv("TODOIST_API_KEY")
+api = TodoistAPI(API)
+
+birthday_data = json.loads(os.getenv("BIRTHDAY_DATA"))
+
+# Function to send task
+def send_task(birthdayBoy):
+    try:
+        task = api.add_task(
+            content=f"It's {birthdayBoy}'s birthday, go say something 🎂",
+            due_string="today"
+        )
+        print(f"Task created for {birthdayBoy}")
+    except Exception as error:
+        print(f"Error creating task for {birthdayBoy}: {error}")
+
+# Get today's date
+today = datetime.now().strftime("%m-%d")
+
+# Check birthdays and send tasks
+for name, birthday in birthday_data.items():
+    if birthday == today:
+        send_task(name)
