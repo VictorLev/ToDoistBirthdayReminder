@@ -1,0 +1,26 @@
+name: Birthday Reminder
+
+on:
+  schedule:
+    - cron: "0 8 * * *"  # Runs daily at 8 AM UTC
+
+jobs:
+  send-birthday-reminder:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.9
+
+      - name: Install dependencies
+        run: pip install todoist-api-python
+
+      - name: Run script
+        env:
+          TODOIST_API_KEY: ${{ secrets.TODOIST_API_KEY }}
+          BIRTHDAY_DATA: ${{ secrets.BIRTHDAY_DATA }}
+        run: python main.py
