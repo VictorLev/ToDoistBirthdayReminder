@@ -22,6 +22,6 @@ jobs:
 
       - name: Run script
         env:
-          TODOIST_API_KEY: ${{ secrets.TODOIST_API_KEY }}
+          TODOIST_API_KEY: ${{ secrets.TODOISTAPIKEY }}
           BIRTHDAY_DATA: ${{ vars.BIRTHDAY_DATA }}
         run: python main.py
