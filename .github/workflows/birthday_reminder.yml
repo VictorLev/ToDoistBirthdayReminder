@@ -3,6 +3,7 @@ name: Birthday Reminder
 on:
   schedule:
     - cron: "0 8 * * *"  # Runs daily at 8 AM UTC
+  workflow_dispatch: # Add this to allow manual triggering
 
 jobs:
   send-birthday-reminder:
