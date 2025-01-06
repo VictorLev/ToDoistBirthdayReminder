@@ -23,5 +23,5 @@ jobs:
       - name: Run script
         env:
           TODOIST_API_KEY: ${{ secrets.TODOIST_API_KEY }}
-          BIRTHDAY_DATA: ${{ secrets.BIRTHDAY_DATA }}
+          BIRTHDAY_DATA: ${{ variables.BIRTHDAY_DATA }}
         run: python main.py
